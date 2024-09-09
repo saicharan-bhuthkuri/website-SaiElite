@@ -1,0 +1,722 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, #2c3e50, #34495e); /* Gradient background */
+    padding: 20px 40px; /* Refined padding */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* Subtle blur effect */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+}
+
+.navbar .logo {
+    font-size: 1.8em;
+    font-weight: 700; /* Strong font weight */
+    color: #ecf0f1; /* Light color for contrast */
+    text-transform: uppercase; /* Uppercase for a professional look */
+    letter-spacing: 1px; /* Slight spacing between letters */
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.navbar .nav-links li {
+    margin-left: 35px; /* Increased spacing */
+    position: relative; /* Required for dropdowns */
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #ecf0f1; /* Light color for readability */
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 8px 16px; /* Padding for clickability */
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+    border-radius: 4px; /* Rounded corners */
+}
+
+.navbar .nav-links a:hover {
+    color: #1abc9c; /* Refined hover color */
+    transform: translateY(-2px); /* Subtle lift effect */
+}
+
+.navbar .nav-links a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #1abc9c;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+.navbar .nav-links a:hover::after {
+    width: 100%; /* Smooth underline effect on hover */
+}
+
+.navbar .cta-btn {
+    background-color: #a8d5ba; /* Light green color */
+    color: #2c3e50; /* Darker text color for contrast */
+    padding: 10px 30px;
+    border-radius: 30px; /* Rounded button */
+    font-weight: 600;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+}
+
+.navbar .cta-btn:hover {
+    background-color: #8bc34a; /* Slightly darker light green for hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3); /* More prominent shadow */
+    transform: translateY(-4px); /* Button lifts on hover */
+}
+
+/* Dropdown Menu */
+.navbar .nav-links .dropdown {
+    position: relative;
+}
+
+.navbar .nav-links .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #34495e; /* Slightly different background for dropdown */
+    min-width: 160px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.navbar .nav-links .dropdown:hover .dropdown-content {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.navbar .nav-links .dropdown-content a {
+    color: #ecf0f1;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+.navbar .nav-links .dropdown-content a:hover {
+    background-color: #1abc9c; /* Hover color for dropdown items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        display: none; /* Hide links on smaller screens */
+        width: 100%;
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .navbar .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .navbar .nav-links a {
+        padding: 12px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar .logo {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    margin: 20px 30px;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px; /* Adjusted width */
+    background-color: #fff;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+    font-size: 1.3em;
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-bottom: 25px;
+}
+
+.sidebar ul li {
+    margin-bottom: 12px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #4CAF50;
+}
+
+.sidebar p {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+/* Main Section */
+.main-section {
+    flex: 1;
+    padding: 0 30px;
+}
+
+/* Banner */
+.banner {
+    background-color: #4CAF50;
+    color: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.banner h1 {
+    font-size: 2.8em;
+    margin-bottom: 15px;
+}
+
+.banner p {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+}
+
+.shop-btn {
+    background-color: white;
+    color: #4CAF50;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.shop-btn:hover {
+    background-color: #ddd;
+    transform: scale(1.05);
+}
+
+/* Products Section */
+.products h2 {
+    margin-bottom: 30px;
+    font-size: 1.8em;
+    font-weight: 600;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.product-card {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-name {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.product-price {
+    font-size: 1.2em;
+    color: #4CAF50;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    margin-top: 40px;
+    border-top: 1px solid #444; /* Subtle top border for separation */
+}
+
+.footer p {
+    margin-bottom: 8px;
+    font-size: 0.9em;
+}
+
+.footer a {
+    color: #4CAF50;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 600;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer .social-links {
+    margin: 20px 0;
+}
+
+.footer .social-links a {
+    color: white;
+    margin: 0 10px;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+    color: #4CAF50;
+}
+
+.footer .bottom-links {
+    margin: 20px 0;
+}
+
+.footer .bottom-links a {
+    margin: 0 10px;
+}
+
+.footer .bottom-links a:hover {
+    color: #4CAF50;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 30px;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+
+    .navbar .nav-links {
+        display: none;
+    }
+}
+
+/* getstarted design */
+
+nav.navbar {
+    width: 100%;
+    background: white;
+    padding: 20px 50px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .logo {
+    float: left;
+    font-size: 1.8em;
+    color: #4CAF50;
+    font-weight: 700;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    float: right;
+}
+
+.navbar .nav-links li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1em;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.navbar .nav-links a:hover {
+    color: #4CAF50;
+}
+
+.cta-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-btn:hover {
+    background-color: #45a049;
+}
+
+/* Center the auth-container */
+.auth-container {
+    background: white;
+    padding: 40px 60px;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 100px auto;
+    width: 90%;
+    text-align: center;
+}
+
+.auth-container h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.auth-container p {
+    color: #555;
+    margin-top: 20px;
+}
+
+.auth-container a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.auth-form {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    font-size: 1em;
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.auth-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.auth-btn:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .navbar .logo {
+        float: none;
+        text-align: center;
+        display: block;
+    }
+
+    .navbar .nav-links {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar .nav-links li {
+        display: block;
+        margin-left: 0;
+    }
+}
+
+/* About Page */
+.about-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.about-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+}
+
+.about-container p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.about-container ul {
+    list-style: disc;
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-container ul li {
+    font-size: 1.1em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Contact Page Styles */
+
+/* General Contact Container */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.contact-container p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+/* Contact Page Styles */
+
+/* General Contact Container */
+.contact-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-container h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.contact-container p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    font-size: 1em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-btn:hover {
+    background-color: #45a049;
+    transform: scale(1.02);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
+
